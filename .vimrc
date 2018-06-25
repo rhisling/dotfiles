@@ -7,6 +7,11 @@ filetype plugin indent on
 set nowrap
 set encoding=utf8
 
+"Keep more info in memory
+set hidden
+set history=100
+
+
 call plug#begin('~/.vim/plugged')
 
 	"Themes
