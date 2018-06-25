@@ -3,7 +3,6 @@ filetype on
 
 set backspace=2
 set termguicolors
-set lines=35 columns=150
 set guifont=OperatorMonoSSM\ Nerd\ Font:h12 
 
 "Keep more info in memory
@@ -13,6 +12,9 @@ set history=100
 " Show linenumbers
 set number
 set ruler
+
+"Setting search highlight
+set hlsearch
 
 "Indenting
 filetype plugin indent on
@@ -52,9 +54,9 @@ call plug#begin('~/.vim/plugged')
 
 	Plug 'scrooloose/syntastic'
 
-	Plug 'valloric/youcompleteme'
-
 	Plug 'mattn/emmet-vim'
+
+	
 
 call plug#end()
 

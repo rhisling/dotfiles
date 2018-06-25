@@ -1,11 +1,29 @@
+syntax on
+filetype on
 
 set backspace=2
 set termguicolors
-syntax on
 set guifont=OperatorMonoSSM\ Nerd\ Font:h12 
-filetype plugin indent on 
+
+"Keep more info in memory
+set hidden
+set history=100
+
+" Show linenumbers
+set number
+set ruler
+
+"Setting search highlight
+set hlsearch
+
+"Indenting
+filetype plugin indent on
 set nowrap
-set encoding=utf8
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set autoindent
 
 call plug#begin('~/.vim/plugged')
 
@@ -36,9 +54,9 @@ call plug#begin('~/.vim/plugged')
 
 	Plug 'scrooloose/syntastic'
 
-	Plug 'valloric/youcompleteme'
-
 	Plug 'mattn/emmet-vim'
+
+	
 
 call plug#end()
 
@@ -49,10 +67,6 @@ call plug#end()
 
 let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
-
-" Show linenumbers
-set number
-set ruler
 
 "Theme and Styling
 syntax on
