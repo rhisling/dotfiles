@@ -1,13 +1,18 @@
+syntax on
+filetype on
 
 set backspace=2
 set termguicolors
-syntax on
+set lines=35 columns=150
 set guifont=OperatorMonoSSM\ Nerd\ Font:h12 
 
 "Keep more info in memory
 set hidden
 set history=100
 
+" Show linenumbers
+set number
+set ruler
 
 "Indenting
 filetype plugin indent on
@@ -60,10 +65,6 @@ call plug#end()
 
 let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
-
-" Show linenumbers
-set number
-set ruler
 
 "Theme and Styling
 syntax on
