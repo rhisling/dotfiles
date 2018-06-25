@@ -2,14 +2,15 @@
 set backspace=2
 set termguicolors
 syntax on
+set guifont=OperatorMonoSSM\ Nerd\ Font:h12 
+filetype plugin indent on 
 
 call plug#begin('~/.vim/plugged')
 
+	"Themes
   	Plug 'dracula/vim'
 
   	Plug 'crater2150/vim-theme-chroma'
-
-  	Plug 'scrooloose/nerdtree'
 
 	Plug 'tyrannicaltoucan/vim-quantum'
 
@@ -18,6 +19,10 @@ call plug#begin('~/.vim/plugged')
 	Plug 'mhartington/oceanic-next'
 
 	Plug 'rakr/vim-one'
+
+
+	"Utility
+	Plug 'scrooloose/nerdtree'
 
 	Plug 'bling/vim-airline'
 
@@ -29,21 +34,21 @@ call plug#begin('~/.vim/plugged')
 
 	Plug 'scrooloose/syntastic'
 
+	Plug 'valloric/youcompleteme'
+
 	Plug 'mattn/emmet-vim'
 
 call plug#end()
-filetype plugin indent on    " required
 
 ""autocmd vimenter * NERDTree
 
-filetype plugin indent on
+:map <C-n> :NerdTree
 
 " Show linenumbers
 set number
 set ruler
 
 "Theme and Styling
-
 syntax on
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
@@ -62,8 +67,9 @@ let g:material_theme_style = 'dark'
 set termguicolors
 set background=dark
 colorscheme material
-highlight LineNr ctermfg=grey ctermbg=black
 
+
+"Syntastic config
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -72,6 +78,3 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-
-
