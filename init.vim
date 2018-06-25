@@ -4,6 +4,8 @@ set termguicolors
 syntax on
 set guifont=OperatorMonoSSM\ Nerd\ Font:h12 
 filetype plugin indent on 
+set nowrap
+set encoding=utf8
 
 call plug#begin('~/.vim/plugged')
 
@@ -41,8 +43,12 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 ""autocmd vimenter * NERDTree
-
+"NerdTree config
 :map <C-n> :NerdTree
+
+
+let mapleader=" "
+map <leader>s :source ~/.vimrc<CR>
 
 " Show linenumbers
 set number
