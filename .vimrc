@@ -3,14 +3,20 @@ set backspace=2
 set termguicolors
 syntax on
 set guifont=OperatorMonoSSM\ Nerd\ Font:h12 
-filetype plugin indent on 
-set nowrap
-set encoding=utf8
 
 "Keep more info in memory
 set hidden
 set history=100
 
+
+"Indenting
+filetype plugin indent on
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set autoindent
 
 call plug#begin('~/.vim/plugged')
 
