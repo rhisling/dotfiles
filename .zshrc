@@ -16,8 +16,12 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir rbenv vcs virtualenv)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_MODE='nerdfont-complete'
+
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+
 
 POWERLEVEL9K_OS_ICON_BACKGROUND="black"
 POWERLEVEL9K_OS_ICON_FOREGROUND="blue"
@@ -81,7 +85,7 @@ DEFAULT_USER=havok
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+  git docker
 )
 
 source $ZSH/oh-my-zsh.sh
