@@ -4,11 +4,10 @@ filetype on
 set backspace=2
 set termguicolors
 set guifont=OperatorMonoSSM\ Nerd\ Font:h12 
-
+set clipboard=unnamed
 "Keep more info in memory
 set hidden
 set history=100
-
 " Show linenumbers
 set number
 set ruler
@@ -28,23 +27,15 @@ set autoindent
 call plug#begin('~/.vim/plugged')
 
 	"Themes
-  	Plug 'dracula/vim'
-
-  	Plug 'crater2150/vim-theme-chroma'
-
 	Plug 'tyrannicaltoucan/vim-quantum'
+  
+  	Plug 'kaicataldo/material.vim'
 
-	Plug 'kaicataldo/material.vim'
-
-	Plug 'mhartington/oceanic-next'
-
-	Plug 'rakr/vim-one'
-
-
+  
 	"Utility
-	Plug 'scrooloose/nerdtree'
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-	Plug 'bling/vim-airline'
+	Plug 'scrooloose/nerdtree'
 
 	Plug 'vim-airline/vim-airline'
 
@@ -52,13 +43,21 @@ call plug#begin('~/.vim/plugged')
 
 	Plug 'tpope/vim-surround'
 
+	Plug 'tpope/vim-fugitive'
+
 	Plug 'scrooloose/syntastic'
 
 	Plug 'mattn/emmet-vim'
 
-	
+  
 
 call plug#end()
+
+
+" deoplete
+" let g:deoplete#enable_at_startup = 1
+
+
 
 ""autocmd vimenter * NERDTree
 "NerdTree config
@@ -88,6 +87,12 @@ set termguicolors
 set background=dark
 colorscheme material
 
+"let g:material_style='oceanic'
+"set background=dark
+"colorscheme vim-material
+"set background=dark
+"colorscheme vim-material
+"let g:airline_theme='material'
 
 "Syntastic config
 set statusline+=%#warningmsg#

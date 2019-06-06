@@ -1,30 +1,50 @@
 # If you come from bash you might have to change your $PATH.
-  export PATH=$HOME/bin:/usr/local/bin:$PATH
+zmodload zsh/zprof
+
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/havok/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
+export PATH=$HOME/.cargo/bin:$PATH
+
+export PATH=/usr/local/bin:$PATH
+
+export PATH=/Users/havok/anaconda3/bin:$PATH
+
+export PATH=$PATH:/usr/local/opt/rabbitmq/sbin
+
+
+##For GO programming
+export GOPATH=$HOME/Desktop/gospace
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-
-# Font mode for powerlevel9k
-POWERLEVEL9K_MODE="nerdfont-complete"
-
-# Set name of the theme to load.
+alias pcat='pygmentize -f terminal256 -O style=native -g'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir rbenv vcs virtualenv)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs virtualenv ssh)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_MODE='nerdfont-complete'
-
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 
 
 POWERLEVEL9K_OS_ICON_BACKGROUND="black"
 POWERLEVEL9K_OS_ICON_FOREGROUND="blue"
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{blue}\u256D\u2500%f"
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{blue}\u2570\uf460%f "
+
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+
 
 POWERLEVEL9K_STATUS_OK_BACKGROUND="246"
 POWERLEVEL9K_STATUS_OK_FOREGROUND="black"
@@ -32,18 +52,27 @@ POWERLEVEL9K_STATUS_ERROR_BACKGROUND="246"
 POWERLEVEL9K_STATUS_ERROR_FOREGROUND="red"
 DEFAULT_USER=havok
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
+typeset -A ZSH_HIGHLIGHT_STYLES
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
+#ZSH_HIGHLIGHT_STYLES[default]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[path]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
+
+
+#alias python=/usr/local/bin/python3
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -80,15 +109,20 @@ DEFAULT_USER=havok
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+
 plugins=(
-  git docker
+zsh-syntax-highlighting zsh-autosuggestions git docker
 )
 
 source $ZSH/oh-my-zsh.sh
+
+source ~/kafka-zsh-completions/kafka.zsh
 
 # User configuration
 
@@ -118,3 +152,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+##if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/havok/.sdkman"
+[[ -s "/Users/havok/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/havok/.sdkman/bin/sdkman-init.sh"
