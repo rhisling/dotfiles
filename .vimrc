@@ -28,16 +28,26 @@ call plug#begin('~/.vim/plugged')
 
 	"Themes
 	Plug 'tyrannicaltoucan/vim-quantum'
+
+	Plug 'mhartington/oceanic-next'
+
+	Plug 'rakr/vim-one'
+
+	Plug 'hzchirs/vim-material'
   
   	Plug 'kaicataldo/material.vim'
 
   
 	"Utility
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 	Plug 'scrooloose/nerdtree'
 
 	Plug 'vim-airline/vim-airline'
+
+	Plug 'vim-airline/vim-airline-themes'
+
+	Plug 'itchyny/lightline.vim'
 
 	Plug 'pangloss/vim-javascript'
 
@@ -55,7 +65,7 @@ call plug#end()
 
 
 " deoplete
-" let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 
 
 
@@ -74,18 +84,26 @@ let g:jsx_ext_required = 0
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'material'
+
 
 if (has("termguicolors"))
   set termguicolors
 endif
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+
+let g:material_theme_style = 'ocean'
 let g:material_terminal_italics = 1
-let g:material_theme_style = 'dark'
-set termguicolors
-set background=dark
 colorscheme material
+let g:lightline = { 'colorscheme': 'material_vim' }
+
+" let g:material_terminal_italics = 1
+" let g:material_style = 'oceanic'
+" set termguicolors
+" set background=dark
+" colorscheme vim-material
+" let g:airline_theme = 'material'
 
 "let g:material_style='oceanic'
 "set background=dark
