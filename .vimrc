@@ -5,7 +5,7 @@ set encoding=utf-8
 set backspace=indent,eol,start
 set backspace=2
 set termguicolors
-set guifont=OperatorMonoSSM\ Nerd\ Font:h12 
+set guifont=OperatorMonoSSM\ Nerd\ Font:h15
 set clipboard=unnamed
 "Keep more info in memory
 set hidden

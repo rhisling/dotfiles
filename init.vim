@@ -5,7 +5,7 @@ set encoding=utf-8
 set backspace=indent,eol,start
 set backspace=2
 set termguicolors
-set guifont=OperatorMonoSSM\ Nerd\ Font:h12 
+set guifont=OperatorMonoSSM\ Nerd\ Font:h15 
 set clipboard=unnamed
 "Keep more info in memory
 set hidden
@@ -63,8 +63,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tmhedberg/SimpylFold'
 
 	Plug 'vim-scripts/indentpython.vim'
-
-	Plug 'Valloric/YouCompleteMe'
 
 	Plug 'nvie/vim-flake8'
 
@@ -126,14 +124,14 @@ let g:lightline = { 'colorscheme': 'material_vim' }
 "let g:airline_theme='material'
 
 "Syntastic config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 1
 
 
 "split navigations
@@ -166,23 +164,11 @@ highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 
-
-
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/Users/havok/anaconda3/bin/python'
-
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 
 let python_highlight_all=1
