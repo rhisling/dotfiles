@@ -37,9 +37,17 @@ call plug#begin('~/.vim/plugged')
   
   	Plug 'kaicataldo/material.vim'
 
+	Plug 'joshdick/onedark.vim'
+
+	Plug 'rakr/vim-one'
+
   
 	"Utility
 	" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+	Plug 'vim-airline/vim-airline'
+
+	Plug 'vim-airline/vim-airline-themes'
 
 	Plug 'scrooloose/nerdtree'
 
@@ -89,7 +97,6 @@ let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
 
 "Theme and Styling
-syntax on
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 
@@ -104,10 +111,18 @@ endif
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 
-let g:material_theme_style = 'ocean'
-let g:material_terminal_italics = 1
-colorscheme material
-let g:lightline = { 'colorscheme': 'material_vim' }
+let g:onedark_hide_endofbuffer=1
+let g:onedark_termcolors=256
+let g:onedark_terminal_italics=1
+colorscheme onedark
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
+
+" let g:material_theme_style = 'ocean'
+" let g:material_terminal_italics = 1
+" colorscheme material
+" let g:lightline = { 'colorscheme': 'material_vim' }
 
 " let g:material_terminal_italics = 1
 " let g:material_style = 'oceanic'
@@ -172,6 +187,4 @@ let g:python3_host_prog = '/Users/havok/anaconda3/bin/python'
 
 
 let python_highlight_all=1
-syntax on
-
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree

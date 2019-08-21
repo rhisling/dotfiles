@@ -5,7 +5,7 @@ set encoding=utf-8
 set backspace=indent,eol,start
 set backspace=2
 set termguicolors
-set guifont=OperatorMonoSSM\ Nerd\ Font:h15
+set guifont=OperatorMonoSSM\ Nerd\ Font:h15 
 set clipboard=unnamed
 "Keep more info in memory
 set hidden
@@ -37,9 +37,17 @@ call plug#begin('~/.vim/plugged')
   
   	Plug 'kaicataldo/material.vim'
 
+	Plug 'joshdick/onedark.vim'
+
+	Plug 'rakr/vim-one'
+
   
 	"Utility
 	" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+	Plug 'vim-airline/vim-airline'
+
+	Plug 'vim-airline/vim-airline-themes'
 
 	Plug 'scrooloose/nerdtree'
 
@@ -63,8 +71,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tmhedberg/SimpylFold'
 
 	Plug 'vim-scripts/indentpython.vim'
-
-	Plug 'Valloric/YouCompleteMe'
 
 	Plug 'nvie/vim-flake8'
 
@@ -91,7 +97,6 @@ let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
 
 "Theme and Styling
-syntax on
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 
@@ -106,10 +111,18 @@ endif
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 
-let g:material_theme_style = 'ocean'
-let g:material_terminal_italics = 1
-colorscheme material
-let g:lightline = { 'colorscheme': 'material_vim' }
+let g:onedark_hide_endofbuffer=1
+let g:onedark_termcolors=256
+let g:onedark_terminal_italics=1
+colorscheme onedark
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
+
+" let g:material_theme_style = 'ocean'
+" let g:material_terminal_italics = 1
+" colorscheme material
+" let g:lightline = { 'colorscheme': 'material_vim' }
 
 " let g:material_terminal_italics = 1
 " let g:material_style = 'oceanic'
@@ -126,14 +139,14 @@ let g:lightline = { 'colorscheme': 'material_vim' }
 "let g:airline_theme='material'
 
 "Syntastic config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 1
 
 
 "split navigations
@@ -166,26 +179,12 @@ highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 
-
-
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/Users/havok/anaconda3/bin/python'
 
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
-
 
 let python_highlight_all=1
-syntax on
-
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
