@@ -1,3 +1,4 @@
+DISABLE_UPDATE_PROMPT=true
 # If you come from bash you might have to change your $PATH.
 zmodload zsh/zprof
 
@@ -10,12 +11,11 @@ export PATH=$HOME/.cargo/bin:$PATH
 
 export PATH=/usr/local/bin:$PATH
 
-# export PATH=/Users/havok/anaconda3/bin:$PATH
+export PATH=/Users/havok/anaconda3/bin:$PATH
 
-export PATH=$PATH:/usr/local/opt/rabbitmq/sbin
+export PATH=/usr/local/opt/liquibase:$PATH
 
-
-##For GO programming
+#F#or GO programming
 export GOPATH=$HOME/Desktop/gospace
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
@@ -59,7 +59,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 ZSH_HIGHLIGHT_STYLES[path]='fg=yellow'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
 
-
+#alias python=/usr/local/bin/python3.8
+#alias pip=/usr/local/bin/pip3.8
 #alias python=/usr/local/bin/python3
 
 # Set list of themes to pick from when loading at random
@@ -124,6 +125,10 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/kafka-zsh-completions/kafka.zsh
 
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+export PIPENV_IGNORE_VIRTUALENVS=1
+eval "$(direnv hook zsh)"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -156,6 +161,14 @@ source ~/kafka-zsh-completions/kafka.zsh
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 ##if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/havok/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/havok/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/havok/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/havok/google-cloud-sdk/completion.zsh.inc'; fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/havok/.sdkman"

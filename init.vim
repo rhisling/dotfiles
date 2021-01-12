@@ -39,9 +39,13 @@ call plug#begin('~/.vim/plugged')
 
 	Plug 'joshdick/onedark.vim'
 
-	Plug 'rakr/vim-one'
+	Plug 'arcticicestudio/nord-vim'
 
-  
+	Plug 'ayu-theme/ayu-vim'
+
+	Plug 'leafgarland/typescript-vim'
+	
+	
 	"Utility
 	" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
@@ -57,7 +61,9 @@ call plug#begin('~/.vim/plugged')
 
 	Plug 'itchyny/lightline.vim'
 
-	Plug 'pangloss/vim-javascript'
+	Plug 'Yggdroot/indentLine'
+
+	
 
 	Plug 'tpope/vim-surround'
 
@@ -77,6 +83,19 @@ call plug#begin('~/.vim/plugged')
 	Plug 'jistr/vim-nerdtree-tabs'
 
 	Plug 'kien/ctrlp.vim'
+
+	Plug 'sheerun/vim-polyglot'
+
+
+	"For Go
+	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+	"For Javascript
+	Plug 'pangloss/vim-javascript'
+
+	Plug 'peitalin/vim-jsx-typescript'
+
+ 	Plug 'mxw/vim-jsx'
 
   
 
@@ -111,6 +130,18 @@ endif
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 
+" colorscheme nord
+" let g:lightline = { 'colorscheme': 'nord' }
+
+" let g:ayu_hide_endofbuffer=1
+" let g:ayu_termcolors=256
+" let g:ayu_terminal_italics=1
+" let ayucolor="mirage"
+" colorscheme ayu
+" let g:lightline = {
+"       \ 'colorscheme': 'ayu',
+"       \ }
+
 let g:onedark_hide_endofbuffer=1
 let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
@@ -119,7 +150,7 @@ let g:lightline = {
   \ 'colorscheme': 'onedark',
   \ }
 
-" let g:material_theme_style = 'ocean'
+" let g:material_theme_style = 'palenight'
 " let g:material_terminal_italics = 1
 " colorscheme material
 " let g:lightline = { 'colorscheme': 'material_vim' }

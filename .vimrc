@@ -39,7 +39,10 @@ call plug#begin('~/.vim/plugged')
 
 	Plug 'joshdick/onedark.vim'
 
-	Plug 'rakr/vim-one'
+	Plug 'arcticicestudio/nord-vim'
+
+	Plug 'ayu-theme/ayu-vim'
+
 
   
 	"Utility
@@ -111,6 +114,12 @@ endif
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 
+" colorscheme nord
+" let g:lightline = { 'colorscheme': 'nord' }
+
+" let ayucolor="mirage"
+" colorscheme ayu
+
 let g:onedark_hide_endofbuffer=1
 let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
@@ -119,7 +128,7 @@ let g:lightline = {
   \ 'colorscheme': 'onedark',
   \ }
 
-" let g:material_theme_style = 'ocean'
+" let g:material_theme_style = 'palenight'
 " let g:material_terminal_italics = 1
 " colorscheme material
 " let g:lightline = { 'colorscheme': 'material_vim' }
