@@ -1,1 +1,1 @@
-# My vimrc config
+# dot files
