@@ -169,6 +169,3 @@ if [ -f '/Users/havok/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/havok/goo
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/havok/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/havok/google-cloud-sdk/completion.zsh.inc'; fi
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/havok/.sdkman"
-[[ -s "/Users/havok/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/havok/.sdkman/bin/sdkman-init.sh"
