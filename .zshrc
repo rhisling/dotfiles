@@ -123,12 +123,11 @@ zsh-syntax-highlighting zsh-autosuggestions git docker
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/kafka-zsh-completions/kafka.zsh
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 export PIPENV_IGNORE_VIRTUALENVS=1
-eval "$(direnv hook zsh)"
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"

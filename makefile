@@ -5,5 +5,5 @@ latest:
 
 update:
 	cp .zshrc ~
-	cp init.vim ~/.config/nvim/
+	mkdir -p ~/.config/nvim/ && cp init.vim ~/.config/nvim/
 	cp .vimrc ~
