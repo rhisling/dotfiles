@@ -129,9 +129,8 @@ endif
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-
-" colorscheme nord
-" let g:lightline = { 'colorscheme': 'nord' }
+colorscheme nord
+let g:lightline = { 'colorscheme': 'nord' }
 
 " let g:ayu_hide_endofbuffer=1
 " let g:ayu_termcolors=256
@@ -145,10 +144,10 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let g:onedark_hide_endofbuffer=1
 let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
-colorscheme onedark
-let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ }
+" colorscheme onedark
+" let g:lightline = {
+"  \ 'colorscheme': 'onedark',
+"  \ }
 
 " let g:material_theme_style = 'palenight'
 " let g:material_terminal_italics = 1
