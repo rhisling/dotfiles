@@ -7,3 +7,4 @@ update:
 	cp .zshrc ~
 	mkdir -p ~/.config/nvim/ && cp init.vim ~/.config/nvim/
 	cp .vimrc ~
+	cp .p10k.zsh ~
