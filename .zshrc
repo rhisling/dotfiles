@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 DISABLE_UPDATE_PROMPT=true
 # If you come from bash you might have to change your $PATH.
 zmodload zsh/zprof
@@ -28,7 +35,7 @@ export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 alias pcat='pygmentize -f terminal256 -O style=native -g'
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs virtualenv ssh)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
@@ -123,12 +130,11 @@ zsh-syntax-highlighting zsh-autosuggestions git docker
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/kafka-zsh-completions/kafka.zsh
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 export PIPENV_IGNORE_VIRTUALENVS=1
-eval "$(direnv hook zsh)"
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -170,6 +176,5 @@ if [ -f '/Users/havok/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/havok/goo
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/havok/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/havok/google-cloud-sdk/completion.zsh.inc'; fi
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/havok/.sdkman"
-[[ -s "/Users/havok/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/havok/.sdkman/bin/sdkman-init.sh"
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
