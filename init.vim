@@ -1,27 +1,4 @@
-" Disable compatibility with vi which can cause unexpected issues.
-set nocompatible
-
-" Enable type file detection. Vim will be able to try to detect the type of file in use.
-filetype on
-
-" Enable plugins and load plugin for the detected file type.
-filetype plugin on
-
-" Load an indent file for the detected file type.
-filetype indent on
-
-" Turn syntax highlighting on.
-syntax on
-
-" Add numbers to each line on the left-hand side.
-set number
-
-" Highlight cursor line underneath the cursor horizontally.
-set cursorline
-
-" Highlight cursor line underneath the cursor vertically.
-set cursorcolumn
-
+" Disable compatibility with vi which can cause unexpected issues. set nocompatible Enable type file detection. Vim will be able to try to detect the type of file in use. filetype on Enable plugins and load plugin for the detected file type. filetype plugin on Load an indent file for the detected file type. filetype indent on Turn syntax highlighting on. syntax on Add numbers to each line on the left-hand side. set number Highlight cursor line underneath the cursor horizontally. set cursorline Highlight cursor line underneath the cursor vertically. set cursorcolumn
 " Set shift width to 4 spaces.
 set shiftwidth=4
 
@@ -104,7 +81,7 @@ call plug#begin('~/.vim/plugged')
 
 	Plug 'ayu-theme/ayu-vim'
 
-	Plug 'navarasu/onedark.nvim'
+	Plug 'joshdick/onedark.vim'
 
 	"Utility
 	" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -117,7 +94,7 @@ call plug#begin('~/.vim/plugged')
 
 	Plug 'preservim/nerdtree'
 
-	Plug 'itchyny/lightline.vim'
+	"Plug 'itchyny/lightline.vim'
 
 	Plug 'pangloss/vim-javascript'
 
@@ -227,14 +204,20 @@ augroup END
 
 	let g:javascript_plugin_flow = 1
 	let g:jsx_ext_required = 0
-	let g:airline_theme='base16_onedark'
+	"let g:airline_theme='base16_onedark'
 	colorscheme onedark
-
-	
+    let g:airline_theme='onedark'
+    let g:airline_powerline_fonts = 1
 
 
 " }}}
 
+
+" Use space characters instead of tabs.
+set expandtab
+
+" Do not save backup files.
+set nobackup
 
 " STATUS LINE ------------------------------------------------------------ {{{
 
@@ -302,3 +285,4 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/Users/havok/anaconda3/bin/python'
+
