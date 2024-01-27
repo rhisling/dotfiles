@@ -36,7 +36,7 @@ set showmode
 " Show matching words during a search.
 set showmatch
 
-" Use highlighting when doing a search.read git_config_user_name
+" Use highlighting when doing a search.
 set hlsearch
 
 " Set the commands to save in history default number is 20.
@@ -212,12 +212,6 @@ augroup END
 
 " }}}
 
-
-" Use space characters instead of tabs.
-set expandtab
-
-" Do not save backup files.
-set nobackup
 
 " STATUS LINE ------------------------------------------------------------ {{{
 
